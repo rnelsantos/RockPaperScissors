@@ -96,9 +96,11 @@ function scissorsClick() {
 function PlayGame() {
   result2.innerText = `PLAYER: ${playerPoints} COMPUTER: ${CPpoints} `
   if (CPpoints===5||playerPoints===5) { 
+    let winner;
+    playerPoints===5 ? winner="PLAYER":winner="COMPUTER"
     CPpoints=0;
     playerPoints=0;
-    result2.innerText = `MATCH ENDS: ${CPpoints<playerPoints ? "PLAYER":"COMPUTER"} WINS! `
+    result2.innerText = `MATCH ENDS: ${winner} WINS! `
   }
 }
 
