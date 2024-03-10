@@ -1,23 +1,25 @@
-
+//get elements for event triggers
 const Rbutton = document.getElementById('rockButton');
 const Pbutton = document.getElementById('paperButton');
 const Sbutton = document.getElementById('scissorsButton');
-
+//get elements for display/revisions/prints
 const CP = document.getElementById("CP");
 const Player = document.getElementById("Player");
 const result = document.getElementById("RESULT");
-
+const result2 = document.getElementById("RESULT2");
+//declare variables for game
 let playerHand;
 let RPScomp ;
 let CPhand;
 
+//event listener for buttons
 Rbutton.addEventListener('click', rockClick);
 Pbutton.addEventListener('click', paperClick);
 Sbutton.addEventListener('click', scissorsClick);
 //Sbutton.addEventListener('click', klik);
 
 
-function getComputerChoice() {
+function getComputerChoice() { //Generate pseudo random computer choice
    let random=Math.floor(Math.random()*2);
     switch (random) {
     case 0:
@@ -33,7 +35,7 @@ function getComputerChoice() {
 
 }
 
-
+//draw a round upon a click on any buttons///////////////////////////////////////////
 function rockClick() {
 getComputerChoice();
 playerHand = "ROCK";
@@ -60,8 +62,14 @@ function scissorsClick() {
     displayResult()
     //console.log(alert(CPhand))
     }
+////////////////////////////////////////////////////////////////////////////////
 
-    let results
+//declare varaibles for points keeping and results
+    let results;
+    let results2;
+    let CPpoints=0;
+    let playerPoints=0;
+
     function Result() {
         let win;
         playerHand.toLowerCase() === CPhand.toLowerCase()? win=0:  (playerHand === "ROCK" && CPhand === "paper")||(playerHand === "PAPER" && CPhand === "scissors")||(playerHand === "SCISSORS" && CPhand === "rock") ? win=1: win=2
@@ -72,10 +80,12 @@ function scissorsClick() {
               results="TIE"
               break;
             case 1:
-                results="YOU LOSE"
+                results=`Points goes to Computer, ${CPhand} beats ${playerHand}`;
+                ++CPpoints;
               break;
             case 2:
-                results="YOU WIN";
+                results=`Points goes to you, ${playerHand} beats ${CPhand}`
+                ++playerPoints;
                 break;
         }
         
@@ -83,11 +93,21 @@ function scissorsClick() {
 
       }
 
+function PlayGame() {
+  result2.innerText = `PLAYER: ${playerPoints} COMPUTER: ${CPpoints} `
+  if (CPpoints===5||playerPoints===5) { 
+    CPpoints=0;
+    playerPoints=0;
+    result2.innerText = `MATCH ENDS: ${CPpoints<playerPoints ? "PLAYER":"COMPUTER"} WINS! `
+  }
+}
+
  function displayResult(){   
      Result(playerHand, CPhand) ;
-    
+     PlayGame()
 
 
     result.innerText = results; 
+    
  }
 
