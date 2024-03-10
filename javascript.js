@@ -20,7 +20,7 @@ Sbutton.addEventListener('click', scissorsClick);
 
 
 function getComputerChoice() { //Generate pseudo random computer choice
-   let random=Math.floor(Math.random()*2);
+   let random=Math.floor(Math.random()*3);
     switch (random) {
     case 0:
       CPhand="rock";
@@ -29,7 +29,10 @@ function getComputerChoice() { //Generate pseudo random computer choice
         CPhand="paper";
       break;
     case 2:
-        CPhand="Scissors";
+        CPhand="scissors";
+        break;
+        default:
+        CPhand="scissors";
         break;
 }
 
