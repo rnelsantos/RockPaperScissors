@@ -1,0 +1,32 @@
+.div1 {
+display:flex;
+flex-direction:column;
+justify-content:center;
+Align-items: center;
+Gap:10px;
+Height:1000px;
+border:3px solid red;
+}
+
+.button-container{
+    display:flex;
+    flex-direction:row;
+    //border:3px solid green;
+    width:300px;
+    justify-content:space-around;
+}
+
+button{
+max-width:500px;
+//border:3px solid red;
+display:flex;
+justify-content:center;
+//border:3px solid red;
+}
+
+
+p{
+display:flex;
+justify-content:center;
+//border:3px solid red;
+}
