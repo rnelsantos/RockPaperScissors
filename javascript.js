@@ -37,6 +37,10 @@ function getComputerChoice() { //Generate pseudo random computer choice
 }
 
 }
+//replace display hand divs
+//const handContainer = document.getElementById("displayHand");
+//const createDisHand = document.createElement('img');
+const disHand = document.getElementById("displayHand-container");
 
 //draw a round upon a click on any buttons///////////////////////////////////////////
 function rockClick() {
@@ -45,8 +49,15 @@ playerHand = "ROCK";
 Player.innerText = "Your Hand: " + playerHand;
 CP.innerText = "Computer's Hand: " + CPhand;
 displayResult()
+const disHand = document.getElementById("displayHand-container");
+
+disHand.innerHTML ='<img src=\".\\images\\rock.png\"class=\"displayHand\">';
 //console.log(alert(CPhand))
 }
+
+
+
+
 
 function paperClick() {
     getComputerChoice();
@@ -54,7 +65,8 @@ function paperClick() {
     Player.innerText = "Your Hand: " + playerHand;
     CP.innerText = "Computer's Hand: " + CPhand;
     displayResult()
-    //console.log(alert(CPhand))
+    const disHand = document.getElementById("displayHand-container");
+    disHand.innerHTML ='<img src=\".\\images\\paper.png\"class=\"displayHand\">';
     }
 
 function scissorsClick() {
@@ -64,6 +76,8 @@ function scissorsClick() {
     CP.innerText = "Computer's Hand: " + CPhand;
     displayResult()
     //console.log(alert(CPhand))
+    const disHand = document.getElementById("displayHand-container");
+    disHand.innerHTML ='<img src=\".\\images\\scissors.png\"class=\"displayHand\">';
     }
 ////////////////////////////////////////////////////////////////////////////////
 
