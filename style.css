@@ -15,7 +15,7 @@ Align-items: center;
 Gap:10px;
 Height:500px;
 background-color:RGB(0,19,25);
-border:3px solid red;
+//border:3px solid red;
 
 
 }
@@ -32,10 +32,10 @@ border:3px solid red;
 
 .button-container{
     
-    padding: 15px 30px;
+    padding: 0px 0px;
     display:flex;
     flex-direction:row;
-    //border:3px solid green;
+    border:px solid green;
     width:300px;
    gap:10px;
    justify-content:space-around;
@@ -44,10 +44,24 @@ border:3px solid red;
 
 button:hover {
     background-color: #2980b9; /* Darker blue on hover */
-    border:1px solid white;
+   
   }
 
+button .displayHand{
+  height:40px;
+   display:flex;
+   align-items:center;
+    flex:1;
+    flex-direction:column;
+    flex-basis:0;
+
+}
+
 button{
+    display:flex;
+    align-items:center;
+    flex:1;
+    flex-direction:column;
 font-size: 16px; 
 max-width:500px;
 padding: 10px 30px;

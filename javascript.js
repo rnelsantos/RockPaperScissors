@@ -24,12 +24,15 @@ function getComputerChoice() { //Generate pseudo random computer choice
     switch (random) {
     case 0:
       CPhand="rock";
+      showRock();
       break;
     case 1:
         CPhand="paper";
+        showPaper();
       break;
     case 2:
         CPhand="scissors";
+        showScissors();
         break;
         default:
         CPhand="scissors";
@@ -37,10 +40,26 @@ function getComputerChoice() { //Generate pseudo random computer choice
 }
 
 }
+
+
+
 //replace display hand divs
 //const handContainer = document.getElementById("displayHand");
 //const createDisHand = document.createElement('img');
 const disHand = document.getElementById("displayHand-container");
+
+function showRock() {
+  const disHand = document.getElementById("displayHand-container");
+  disHand.innerHTML ='<img src=\".\\images\\rock.png\"class=\"displayHand\">';}
+
+function showPaper() {
+  const disHand = document.getElementById("displayHand-container");
+  disHand.innerHTML ='<img src=\".\\images\\paper.png\"class=\"displayHand\">';}
+  
+function showScissors() {
+  const disHand = document.getElementById("displayHand-container");
+  disHand.innerHTML ='<img src=\".\\images\\scissors.png\"class=\"displayHand\">';}
+
 
 //draw a round upon a click on any buttons///////////////////////////////////////////
 function rockClick() {
@@ -49,15 +68,9 @@ playerHand = "ROCK";
 Player.innerText = "Your Hand: " + playerHand;
 CP.innerText = "Computer's Hand: " + CPhand;
 displayResult()
-const disHand = document.getElementById("displayHand-container");
 
-disHand.innerHTML ='<img src=\".\\images\\rock.png\"class=\"displayHand\">';
 //console.log(alert(CPhand))
 }
-
-
-
-
 
 function paperClick() {
     getComputerChoice();
@@ -65,8 +78,7 @@ function paperClick() {
     Player.innerText = "Your Hand: " + playerHand;
     CP.innerText = "Computer's Hand: " + CPhand;
     displayResult()
-    const disHand = document.getElementById("displayHand-container");
-    disHand.innerHTML ='<img src=\".\\images\\paper.png\"class=\"displayHand\">';
+    
     }
 
 function scissorsClick() {
@@ -97,11 +109,11 @@ function scissorsClick() {
               results="TIE"
               break;
             case 1:
-                results=`Points goes to Computer, ${CPhand} beats ${playerHand}`;
+                results=`YOU LOSE, ${CPhand} beats ${playerHand}`;
                 ++CPpoints;
               break;
             case 2:
-                results=`Points goes to you, ${playerHand} beats ${CPhand}`
+                results=`YOU WIN, ${playerHand} beats ${CPhand}`
                 ++playerPoints;
                 break;
         }
